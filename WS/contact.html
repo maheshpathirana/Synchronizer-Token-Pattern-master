@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="css/testlogin.css" rel="stylesheet">
+
+<style>
+  
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  display:;
+  position: absolute;
+  top: 90px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin-top: auto; 
+  margin-left: auto;
+  width: 520px;
+  height: 600px;
+  margin: auto;
+  background-color: rgba(0,0,0,0.5);
+  padding: 40px;
+  margin:auto;
+  opacity: 1;
+}
+
+</style>
+<script>
+$(document).ready(function(){
+  $.ajax({url: "http://localhost/WS/GetCSRF.php", success: function(result){
+	var obj = JSON.parse(result);
+	$("#domCSRF").val(obj.csrf);
+  }});
+});
+</script>
+</head>
+
+<body>
+ 
+ <center> <h1 style="color: #FF0000">Contact Form</h1> </center> <br>
+<div class="container">
+
+  <form action="contact_sub.php" method="POST">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="Sri Lanka">Sri Lanka</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="india">India</option>
+      <option value="aus">Australia</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write message...." style="height:200px"></textarea>
+	
+	<input type="hidden" id="domCSRF" name="csrf_token" value=""/>
+    <input type="submit" name="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+

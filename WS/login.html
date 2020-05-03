@@ -1,0 +1,85 @@
+<html>
+<head>
+
+  <style>
+  
+  @import "http://fonts.googleapis.com/css?family=Raleway";
+  body{
+    background:url(images/backgr.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+  .inside{
+  display:;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin-top: auto; 
+  margin-left: auto;
+  width: 520px;
+  height: 375px;
+  margin: auto;
+  background-color: rgba(0,0,0,0.5);
+  padding: 40px;
+  margin:auto;
+  opacity: 1;
+}
+.float{
+  background-color:#21B454;
+  border-radius:4px;
+  border:none;
+  padding:7px 19px;
+  color:#FFF;
+  font-family:'Poppins-Bold',sans-serif;
+  text-shadow:1px 1px 1px #949494;
+  margin-left:275px;
+  margin-right:-25px;
+  margin:20px 65px 25px 100px;
+}
+.contact{
+  background-position:6px;
+  border:1px solid #FFF;
+  margin:20px 65px 25px -210px;
+  padding-left:5px;
+  width:315px;
+  height:30px;
+  font-size:14px;
+  color: rgba(0,0,0,0.5);
+  font-family: 'Helvetica', FontAwesome, sans-serif;
+  margin:20px 65px 25px 100px;
+}
+.float:hover{
+  background-color:rgba(0,0,0,0.5)
+}
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="login">
+  <div class="heading">
+    <center><h1 style="color: #FF0000">Login</h1></center>
+    <div class="inside">
+    <form action="log_control.php" method="POST">
+
+      <div class="input">
+       
+        <input type="text" class="contact" name="uname" placeholder="Username" autofocus>
+          </div>
+
+        <div class="input">
+          
+          <input type="password" class="contact" name="pswd" placeholder="Password">
+        </div>
+
+        <button type="submit" name="submit" class="float">Login</button>
+        <center><h2 style="color: #E4FF00">Username:- root | Password :- 1234 </h2></center>
+       </form>
+ 		</div>
+  </div>
+ </div>
+</body>
+</html>
